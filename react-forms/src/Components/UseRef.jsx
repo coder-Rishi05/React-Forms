@@ -42,7 +42,7 @@ const UseRef = () => {
           className="border-2 text-teal-400 border-white rounded-sm  placeholder:text-white px-4 py-2 "
           type="email"
           placeholder="email"
-          ref={age}
+          ref={email}
         />
         <input
           className="border-2 text-teal-400 border-white rounded-sm  placeholder:text-white px-4 py-2 cursor-pointer "
