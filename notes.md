@@ -2,22 +2,20 @@
 
 on submitting form react got reloaded which is not right approach as we dont want to reload our page if we are using react.
 
-There are three ways to handle forms in react these are : 
+There are three ways to handle forms in react these are :
 
 1. useRef
 2. controlled components.
 3. REACT HOOK FORM (Most used way.)
 
-
-### useRef 
-
+### useRef
 
 ```
 In this method we select each input and take their values when form is submitted.
 
 by useRef we can select any html input.
 
-ex : 
+ex :
 
 ```
 
@@ -95,11 +93,13 @@ export default UseRef;
 
 
 ```
+
 ## Controlled components
 
 whatever we write update data throgh useState in real time.
 
-Ex : 
+Ex :
+
 ```
 import { useState } from "react";
 
@@ -130,7 +130,7 @@ const Controlled = () => {
           className="border-1 placeholder:text-white text-white px-4 py-2 border-amber-50 rounded-sm"
           placeholder="Enter name"
           type="text"
-          
+
         />
         <input
           onChange={(e) => setFormData({...formData, email: e.target.value })}
@@ -152,12 +152,72 @@ export default Controlled;
 
 ```
 
+### React hook form
+
+```
+import { useForm } from "react-hook-form";
+
+const Hooks = () => {
+  const { register, handleSubmit } = useForm();
+  // console.log(register())
+
+  return (
+    <div>
+      <h2 className="text-lg text-center text-white font-mono p-4">
+        Form using ReactForm
+      </h2>
+      <form
+        onSubmit={handleSubmit((data) => console.log(data))}
+        className="flex gap-4 flex-col items-center"
+        action=""
+      >
+        <input
+          {...register("name")}
+          type="text"
+          placeholder="name"
+          className="border-2 text-teal-400 border-white rounded-sm  placeholder:text-white px-4 py-2 "
+        />
+        <input
+          {...register("email")}
+          type="age"
+          placeholder="age"
+          className="border-2 text-teal-400 border-white rounded-sm  placeholder:text-white px-4 py-2 "
+        />
+        <input
+          className="border-2 text-teal-400 border-white rounded-sm  cursor-pointer px-4 py-2 "
+          type="submit"
+        />
+      </form>
+    </div>
+  );
+};
+
+export default Hooks;
+
+{
+  /*
+from react hook form we get useForm() which gives us register.
+the register have four values byDefault name, onblur(), onchange() and ref.
+
+we need to pass the register to every input field with name to use its properties.
+ex :  <input {...register('name')}
+          type="age"
+          placeholder="age"
+          className="border-2 text-teal-400 border-white rounded-sm  placeholder:text-white px-4 py-2 "
+        />
+
+        useForm also have handleSubmit() function. This can be used on form and it gives us the values of the forms.
+        ex :
+
+          <form
+        onSubmit={handleSubmit((data) => console.log(data))}
+        className="flex gap-4 flex-col items-center"
+        action=""
+       / >
 
 
+*/
+}
 
 
-
-
-
-
-
+```
