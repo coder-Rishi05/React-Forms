@@ -1,20 +1,22 @@
-import { useState } from 'react'
-import UseRef from './Components/UseRef'
-import Controlled from './Components/Controlled'
-import Hooks from './Components/Hooks'
-import './App.css'
+import { useState } from "react";
+import UseRef from "./Components/UseRef";
+import Controlled from "./Components/Controlled";
+import Hooks from "./Components/Hooks.jsx";
+import "./App.css";
+import Home from "./pages/Home";
 
 function App() {
-  
-
   return (
-  <div className="App h-screen w-full bg-zinc-900 ">
-    <h1 className='text-xl text-center text-white font-mono p-4 ' >React form using UseRef</h1>
-    <UseRef />
-    <Controlled />
-    <Hooks />
+    <div  className="App h-screen w-full bg-zinc-900 ">
+      <h1 className="text-xl text-center text-white font-mono p-4 ">
+        React form using UseRef
+      </h1>
+      <UseRef />
+      <Controlled />
+      <Hooks />
+      <Home />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
