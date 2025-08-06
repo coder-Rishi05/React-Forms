@@ -221,3 +221,7 @@ ex :  <input {...register('name')}
 
 
 ```
+
+### Props practice
+
+

@@ -7,3 +7,11 @@ import tailwindcss from "@tailwindcss/vite";
 export default defineConfig({
   plugins: [react(), tailwindcss()],
 });
+
+// module.exports = {
+//   daisyui: {
+//     themes: ["dark"],
+//   },
+//   plugins: [require("daisyui")],
+//   //...
+// };

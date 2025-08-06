@@ -1,11 +1,14 @@
 import Nav from "../pages/Nav";
 import Design from "./Design";
 
+
+
 const Home = () => {
   return (
-    <div className="w-full h-screen bg-neutral-700 p-10 ">
+    <div data-theme="forest" className="w-full h-screen flex flex-wrap gap-10  bg-zinc-800 p-10 ">
       <Nav />
       <Design />
+      
     </div>
   );
 };
